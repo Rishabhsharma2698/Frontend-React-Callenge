@@ -1,7 +1,6 @@
 import React,{useState,useEffect}from 'react';
 import axios from 'axios'
 import Container from './components/Container';
-import config from './config'
 import './App.css';
 
 function App() {
@@ -27,7 +26,7 @@ function App() {
 
   const fetchData= async ()=>{
     const startdate=GenerateStartDate();
-    const API_REQUEST=`${config.GITHUB_API_ENDPOINT}?q=created:>${startdate}&sort=stars&order=desc&page=${pageIndex}`;
+    const API_REQUEST=(` https://api.github.com/search/repositories?q=created:>${startdate}&sort=stars&order=desc`);
     const {data}= await axios.get(API_REQUEST);
     setData([...Data,...data.items]);
   }
