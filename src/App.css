@@ -1,0 +1,10 @@
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+.App {
+  text-align: center;
+  background-color: aqua;
+}
